@@ -1,3 +1,6 @@
+"""
+Модуль для конфигурации модели инцидентов.
+"""
 from database.base_model import SQLAlchemyModel
 from sqlalchemy import Column, Integer, String, DateTime, Enum
 from datetime import datetime

@@ -1,3 +1,6 @@
+"""
+Модуль для конфигурации FastAPI приложения.
+"""
 from fastapi import FastAPI, Request, status
 from fastapi.exceptions import HTTPException
 from starlette.middleware.cors import CORSMiddleware
