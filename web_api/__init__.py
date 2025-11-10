@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request, status
 from fastapi.exceptions import HTTPException
 from starlette.middleware.cors import CORSMiddleware
+from web_api.endpoints.v1.incidents import router as incidents_router
 
 
 app = FastAPI(
@@ -18,6 +19,8 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"]
 )
+
+app.include_router(incidents_router, prefix="/api/v1/incidents", tags=["incidents"])
 
 
 @app.api_route("/{path_name:path}", methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "PATCH", "TRACE"], include_in_schema=False)

@@ -8,7 +8,7 @@ class IncidentModel(SQLAlchemyModel):
     __tablename__ = "incidents"
     id = Column(Integer, unique=True, primary_key=True)
 
-    status = Column(Enum(IncidentStatusEnum), nullable=False)
+    status = Column(Enum(IncidentStatusEnum), nullable=False, default=IncidentStatusEnum.new)
     source = Column(Enum(IncidentSourceEnum), nullable=False)
     description = Column(String, nullable=False)
 
